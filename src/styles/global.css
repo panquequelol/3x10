@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Departure Mono';
+  src: url('/src/assets/DepartureMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'two';
+  src: url("/src/assets/Tanklager-Original.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "Departure Mono", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "two";
+}

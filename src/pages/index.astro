@@ -1,11 +1,106 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+import Noise from "../components/Noise.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Noise />
+
+  <main>
+    <section class="bg-[#632161]">
+      <div
+        class="flex flex-col justify-center mx-auto max-w-3xl p-4 text-center text-balance"
+      >
+        <img src="/src/assets/kittens.png" alt="dos gatitos jugando" />
+        <p>3x10</p>
+        <h1 class="font-bold text-5xl font-serif tracking-tighter">
+          30k USD, 10 builders, 3 días.
+        </h1>
+        <p class="max-w-2xl mx-auto">
+          construye lo más loco que se te ocurra. queremos que las personas
+          tecnicas más obsesas y ambiciosas apuesten por sí mismas. <br />
+          equity free. sin letra chica.
+        </p>
+        <button
+          class="border-2 mb-8 border-b-black mt-4 border-r-black border-t-white border-l-white py-3 px-8 w-fit mx-auto"
+        >
+          APLICA AQUI
+        </button>
+      </div>
+    </section>
+
+    <!-- Knurl pattern separator -->
+    <div class="relative h-16 bg-[#2d030f] overflow-hidden">
+      <div class="absolute inset-0 opacity-30">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <pattern
+            id="knurl"
+            x="0"
+            y="0"
+            width="8"
+            height="8"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="2" cy="2" r="1" fill="currentColor"></circle>
+            <circle cx="6" cy="6" r="1" fill="currentColor"></circle>
+          </pattern>
+          <rect width="100%" height="100%" fill="url(#knurl)"></rect>
+        </svg>
+      </div>
+    </div>
+
+    <section class="bg-[#2d030f] pt-8 w-full space-y-16 pb-16 p-4">
+      <div class="text-center">
+        <p>Organizan</p>
+        <div class="grid items-center md:flex gap-4 justify-center mt-8">
+          <div
+            class="flex items-center justify-between gap-4 font-serif text-2xl"
+          >
+            <img class="h-36" src="/src/assets/shem.png" alt="shem fund" />
+            <p class="font-serif">SHEM FUND</p>
+          </div>
+          <div
+            class="flex items-center justify-between gap-4 font-serif text-2xl"
+          >
+            <img class="h-36" src="/src/assets/indies.png" alt="shem fund" />
+            <p class="font-serif">INDIES.CL</p>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto max-w-xl">
+        <h2 class="text-2xl font-serif">te queremos a ti. sí, a ti</h2>
+        <p>
+          a la gente más rara, intensa y fuera de lo común de américa latina.
+          queremos darles una oportunidad para llevar sus ideas de 0 a 1.
+        </p>
+      </div>
+      <div class="mx-auto max-w-xl">
+        <h3 class="text-2xl font-serif">queremos tener impacto real</h3>
+        <p>
+          las oportunidades no están repartidas igual en el mundo, y menos en
+          américa latina. queremos más founders, más gente creando cosas para
+          internet. dar el primer paso es difícil. a veces alguien tiene que
+          darte el empujón. eso es 3x10. ven a apostar por ti. te damos 3,000
+          dólares para crear junto a personas igual de bacanes que tú, por 3
+          días. mostrémosle al mundo —y a los inversionistas jaja— lo que puedes
+          lograr.
+        </p>
+      </div>
+      <div class="mx-auto max-w-xl">
+        <h4 class="text-2xl font-serif">
+          si te damos 3,000 USD <br /> ¿te ayudaría a dejar la vida corporativa?
+        </h4>
+        <p>aunque sea para soñar por un rato...</p>
+        <button
+          class="border-2 mb-8 bg-[#632161] border-b-black mt-4 border-r-black border-t-white border-l-white py-3 px-8 w-fit mx-auto"
+        >
+          QUIERO PARTICIPAR
+        </button>
+      </div>
+    </section>
+  </main>
 </Layout>
