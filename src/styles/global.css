@@ -19,4 +19,219 @@
 :root {
   --font-sans: "Departure Mono", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "two";
+  --color-background: #fffcf5;
+  --color-text: #132318;
+  --color-accent: #E4572E;
+  --color-secondary: #C2B8A3;
+  --color-dark-green: #132318;
+  --color-light-green: #e1ff76;
+}
+
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+/* Duotone copper filter for images */
+.duotone-copper {
+  filter: grayscale(1) sepia(1) hue-rotate(-10deg) saturate(3) brightness(0.9) contrast(1.2);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Animation classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Scroll reveal animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button hover effects */
+.btn-apply {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-apply:hover {
+  transform: translateY(-2px);
+}
+
+.btn-apply:hover .btn-bg-1,
+.btn-apply:hover .btn-bg-2 {
+  background-color: #fffcf5;
+  transition: background-color 0.3s ease;
+}
+
+.btn-apply:active {
+  transform: translateY(0);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #fffcf5;
+}
+
+.card-hover:hover .card-overlay {
+  background-color: rgba(19, 35, 24, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+/* Link hover effects */
+.link-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.link-hover:hover {
+  color: #fffcf5;
+  text-decoration: underline;
+}
+
+/* Image hover effects */
+.img-hover {
+  transition: transform 0.5s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+/* Stats animation */
+.stat-item {
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: scale(1.1);
+}
+
+/* Background pattern animation */
+.bg-pattern {
+  animation: float 20s ease-in-out infinite;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, .interactive {
+  transition: all 0.3s ease;
+}
+
+/* Loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: spin 1s linear infinite;
 }

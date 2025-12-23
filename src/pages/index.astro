@@ -1,106 +1,311 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
-import Noise from "../components/Noise.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import WebGLShader from "../components/WebGLShader.astro";
 ---
 
 <Layout>
-  <Noise />
-
-  <main>
-    <section class="bg-[#632161]">
-      <div
-        class="flex flex-col justify-center mx-auto max-w-3xl p-4 text-center text-balance"
-      >
-        <img src="/kittens.png" alt="dos gatitos jugando" />
-        <p>3x10</p>
-        <h1 class="font-bold text-5xl font-serif tracking-tighter">
-          30k USD, 10 builders, 3 días.
-        </h1>
-        <p class="max-w-2xl mx-auto">
-          construye lo más loco que se te ocurra. queremos que las personas
-          tecnicas más obsesas y ambiciosas apuesten por sí mismas. <br />
-          equity free. sin letra chica.
+  <div class="bg-[#132318] min-h-screen w-full relative">
+    <!-- WebGL Background Shader -->
+    <WebGLShader />
+    
+    <!-- Header -->
+    <header class="border-b border-[#dfff5c] h-[55px] flex items-center justify-between px-4 md:px-8 sticky top-0 z-50 bg-[#132318]/80 backdrop-blur-sm">
+      <a href="#home" class="font-sans text-[#dfff5c] text-[18.434px] link-hover animate-fade-in">3x10</a>
+      <div class="flex items-center gap-4">
+        <p class="font-sans text-[#dfff5c] text-[16px] md:text-[18px]">
+          by <a href="#" data-link="shemfund" class="underline link-hover">shemfund</a> & <a href="#" data-link="indies" class="underline link-hover">indies.cl</a>
         </p>
-        <button
-          class="border-2 mb-8 border-b-black mt-4 border-r-black border-t-white border-l-white py-3 px-8 w-fit mx-auto"
-        >
-          APLICA AQUI
-        </button>
+        <div class="font-sans text-[#dfff5c] text-[18.434px] animate-fade-in">ES</div>
       </div>
-    </section>
+    </header>
 
-    <!-- Knurl pattern separator -->
-    <div class="relative h-16 bg-[#2d030f] overflow-hidden">
-      <div class="absolute inset-0 opacity-30">
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <pattern
-            id="knurl"
-            x="0"
-            y="0"
-            width="8"
-            height="8"
-            patternUnits="userSpaceOnUse"
-          >
-            <circle cx="2" cy="2" r="1" fill="currentColor"></circle>
-            <circle cx="6" cy="6" r="1" fill="currentColor"></circle>
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#knurl)"></rect>
-        </svg>
-      </div>
-    </div>
-
-    <section class="bg-[#2d030f] pt-8 w-full space-y-16 pb-16 p-4">
-      <div class="text-center">
-        <p>Organizan</p>
-        <div class="grid items-center md:flex gap-4 justify-center mt-8">
-          <div
-            class="flex items-center justify-between gap-4 font-serif text-2xl"
-          >
-            <img class="h-36" src="/shem.png" alt="shem fund" />
-            <p class="font-serif">SHEM FUND</p>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[831px] overflow-hidden z-10 flex items-center justify-center">
+      <div class="relative z-10 max-w-6xl mx-auto px-4 py-16 w-full">
+        <!-- BATCH-01 OPEN Banner -->
+        <div class="flex justify-center mb-12 scroll-reveal">
+          <div class="relative inline-flex items-center animate-pulse-slow">
+            <img src="/images/tag-vector-new.svg" alt="" class="absolute inset-0 w-full h-full" />
+            <span class="relative z-10 font-sans text-[#e1ff76] text-[17.8px] px-4 py-2">
+              BATCH-01 OPEN
+            </span>
           </div>
-          <div
-            class="flex items-center justify-between gap-4 font-serif text-2xl"
-          >
-            <img class="h-36" src="/indies.png" alt="shem fund" />
-            <p class="font-serif">INDIES.CL</p>
+        </div>
+
+        <!-- Main Title -->
+        <div class="text-center mb-6 scroll-reveal">
+          <h1 class="font-sans text-[#fffcf5] text-[36px] md:text-[44px] lg:text-[51.6px] leading-[69px] mb-4">
+            go full-time on<br />
+            your wildest idea
+          </h1>
+          <p class="font-sans text-[#fffcf5] text-[16px] md:text-[18px] lg:text-[18.9px] leading-[26.4px] opacity-90">
+            3x10 is a free program for the 10<br />
+            most ambitious builders in latam
+          </p>
+        </div>
+
+        <!-- APPLY Button and Stats -->
+        <div class="flex flex-col items-center mb-12 scroll-reveal">
+          <div class="flex justify-center items-center mb-8">
+            <button 
+              class="btn-apply relative inline-flex items-center justify-center min-w-[160px]"
+              data-button="apply-hero"
+              aria-label="Apply to 3x10"
+            >
+              <div class="btn-bg-1 absolute bg-[#dfff5c] h-[34px] w-[160px] top-[6px] left-1/2 -translate-x-1/2 transition-all duration-300"></div>
+              <div class="btn-bg-2 absolute bg-[#dfff5c] h-[40px] w-[148px] left-1/2 -translate-x-1/2 top-0 transition-all duration-300"></div>
+              <span class="relative z-10 font-sans text-[#132318] text-[17.8px] px-8 py-2 whitespace-nowrap">
+                APPLY
+              </span>
+            </button>
+          </div>
+          
+          <!-- Stats -->
+          <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 lg:gap-16 w-full">
+            <div class="text-center stat-item">
+              <p class="font-sans text-[#e1ff76] text-[17.8px] mb-2">where?</p>
+              <p class="font-sans text-[#fffcf5] text-[30px] leading-[39.6px]">santiago</p>
+            </div>
+            <div class="text-center stat-item">
+              <p class="font-sans text-[#e1ff76] text-[18px] mb-2">how much?</p>
+              <p class="font-sans text-[#fffcf5] text-[30.9px] leading-[39.6px]">$3000 USD</p>
+            </div>
+            <div class="text-center stat-item">
+              <p class="font-sans text-[#e1ff76] text-[18.1px] mb-2">when?</p>
+              <p class="font-sans text-[#fffcf5] text-[31.4px] leading-[39.6px]">august 2026</p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="mx-auto max-w-xl">
-        <h2 class="text-2xl font-serif">te queremos a ti. sí, a ti</h2>
-        <p>
-          a la gente más rara, intensa y fuera de lo común de américa latina.
-          queremos darles una oportunidad para llevar sus ideas de 0 a 1.
-        </p>
-      </div>
-      <div class="mx-auto max-w-xl">
-        <h3 class="text-2xl font-serif">queremos tener impacto real</h3>
-        <p>
-          las oportunidades no están repartidas igual en el mundo, y menos en
-          américa latina. queremos más founders, más gente creando cosas para
-          internet. dar el primer paso es difícil. a veces alguien tiene que
-          darte el empujón. eso es 3x10. ven a apostar por ti. te damos 3,000
-          dólares para crear junto a personas igual de bacanes que tú, por 3
-          días. mostrémosle al mundo —y a los inversionistas jaja— lo que puedes
-          lograr.
-        </p>
-      </div>
-      <div class="mx-auto max-w-xl">
-        <h4 class="text-2xl font-serif">
-          si te damos 3,000 USD <br /> ¿te ayudaría a dejar la vida corporativa?
-        </h4>
-        <p>aunque sea para soñar por un rato...</p>
-        <button
-          class="border-2 mb-8 bg-[#632161] border-b-black mt-4 border-r-black border-t-white border-l-white py-3 px-8 w-fit mx-auto"
-        >
-          QUIERO PARTICIPAR
-        </button>
+    </section>
+
+    <!-- Program Description Section -->
+    <section class="relative z-10 min-h-[600px] flex items-center justify-center py-20">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center scroll-reveal space-y-6">
+          <p class="font-sans text-[#fffcf5] text-[18px] md:text-[20px] leading-[28px]">
+            we give you $3,000 to go full time on your idea for 3 days.
+          </p>
+          <p class="font-sans text-[#fffcf5] text-[18px] md:text-[20px] leading-[28px]">
+            we're an accelerator for people who ask forgiveness, not permission.
+          </p>
+          <p class="font-sans text-[#fffcf5] text-[18px] md:text-[20px] leading-[28px]">
+            you must have already built something. 3 days isn't for starting, it's for pushing further.
+          </p>
+          <p class="font-sans text-[#fffcf5] text-[18px] md:text-[20px] leading-[28px]">
+            we want executors. technical builders. people who move fast and make real progress.
+          </p>
+          <p class="font-sans text-[#fffcf5] text-[18px] md:text-[20px] leading-[28px]">
+            we're picking 10 people. flying them to santiago, chile. august 2026.
+          </p>
+        </div>
       </div>
     </section>
-  </main>
+
+    <!-- Only 10 get selected Section -->
+    <section id="info" class="relative z-10 min-h-[831px] flex items-center justify-center py-20">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <h2 class="font-sans text-[#fffcf5] text-[36px] md:text-[44px] lg:text-[51.6px] leading-[69px] mb-4">
+            only 10 get selected
+          </h2>
+          <p class="font-sans text-[#fffcf5] text-[16px] md:text-[18px] lg:text-[18.9px] leading-[26.4px]">
+            are you the right person for 3x10?
+          </p>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 max-w-2xl mx-auto">
+          <div class="text-center stat-item scroll-reveal">
+            <p class="font-sans text-[#e1ff76] text-[17.8px] mb-2">how many?</p>
+            <p class="font-sans text-[#fffcf5] text-[30px] leading-[39.6px]">10 people</p>
+          </div>
+          <div class="text-center stat-item scroll-reveal">
+            <p class="font-sans text-[#e1ff76] text-[18px] mb-2">how long?</p>
+            <p class="font-sans text-[#fffcf5] text-[30.9px] leading-[39.6px]">3 days</p>
+          </div>
+          <div class="text-center stat-item scroll-reveal">
+            <p class="font-sans text-[#e1ff76] text-[18.1px] mb-2">when?</p>
+            <p class="font-sans text-[#fffcf5] text-[31.4px] leading-[39.6px]">august 2026</p>
+          </div>
+          <div class="text-center stat-item scroll-reveal">
+            <p class="font-sans text-[#e1ff76] text-[17.8px] mb-2">where?</p>
+            <p class="font-sans text-[#fffcf5] text-[30px] leading-[39.6px]">santiago</p>
+          </div>
+          <div class="text-center stat-item scroll-reveal">
+            <p class="font-sans text-[#e1ff76] text-[18px] mb-2">how much?</p>
+            <p class="font-sans text-[#fffcf5] text-[30.9px] leading-[39.6px]">$3000 USD</p>
+          </div>
+          <div class="text-center stat-item scroll-reveal">
+            <p class="font-sans text-[#e1ff76] text-[18.1px] mb-2">when?</p>
+            <p class="font-sans text-[#fffcf5] text-[31.4px] leading-[39.6px]">august 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Powered by Section -->
+    <section id="powered-by" class="relative z-10 min-h-[831px] flex items-center justify-center py-20">
+      <div class="max-w-5xl mx-auto px-4 w-full">
+        <div class="text-center mb-16 scroll-reveal">
+          <h2 class="font-sans text-[#fffcf5] text-[28px] md:text-[30px] lg:text-[32.716px] leading-[37.624px]">
+            powered by
+          </h2>
+        </div>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-24 lg:gap-32">
+          <div class="text-center scroll-reveal flex flex-col items-center">
+            <div class="w-[200px] h-[200px] md:w-[220px] md:h-[220px] lg:w-[230px] lg:h-[230px] mx-auto mb-6 hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+              <img src="/images/makers-fellowship-new.png" alt="makers fellowship" class="w-full h-full object-contain" />
+            </div>
+            <p class="font-sans text-[#e1ff76] text-[17.8px] leading-[22px]">
+              makers fellowship
+            </p>
+          </div>
+          <div class="text-center scroll-reveal flex flex-col items-center">
+            <div class="w-[180px] h-[180px] md:w-[200px] md:h-[200px] lg:w-[210px] lg:h-[210px] mx-auto mb-6 hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+              <img src="/images/platanus-ventures-new.png" alt="platanus ventures" class="w-full h-full object-contain" />
+            </div>
+            <p class="font-sans text-[#e1ff76] text-[17.8px] leading-[22px]">
+              platanus ventures
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What would you do with 3k? Section -->
+    <section id="what-would-you-do" class="relative z-10 min-h-[831px] flex items-center justify-center py-20">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-12 scroll-reveal">
+          <h2 class="font-sans text-[#fffcf5] text-[28px] md:text-[30px] lg:text-[32.716px] leading-[37.624px] mb-16">
+            what would you do with 3k?
+          </h2>
+        </div>
+
+        <!-- Image Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+          <div class="relative border border-[#dfff5c] w-full aspect-square overflow-hidden card-hover scroll-reveal">
+            <div class="absolute inset-0">
+              <img src="/images/rectangle7.png" alt="explode" class="w-full h-full object-cover transition-transform duration-500" />
+              <div class="card-overlay absolute inset-0 bg-[rgba(19,35,24,0.81)] transition-all duration-300"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="font-sans text-[#dfff5c] text-[20px] leading-[37.624px]">explode</p>
+            </div>
+          </div>
+          <div class="relative border border-[#dfff5c] w-full aspect-square overflow-hidden card-hover scroll-reveal">
+            <div class="absolute inset-0">
+              <img src="/images/rectangle8.png" alt="puter" class="w-full h-full object-cover transition-transform duration-500" />
+              <div class="card-overlay absolute inset-0 bg-[rgba(19,35,24,0.8)] transition-all duration-300"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="font-sans text-[#dfff5c] text-[20px] leading-[37.624px]">puter</p>
+            </div>
+          </div>
+          <div class="relative border border-[#dfff5c] w-full aspect-square overflow-hidden card-hover scroll-reveal">
+            <div class="absolute inset-0">
+              <img src="/images/rectangle9.png" alt="fish" class="w-full h-full object-cover transition-transform duration-500" />
+              <div class="card-overlay absolute inset-0 bg-[rgba(19,35,24,0.8)] transition-all duration-300"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <p class="font-sans text-[#dfff5c] text-[20px] leading-[37.624px]">fish</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPLY Button -->
+        <div class="flex justify-center items-center scroll-reveal">
+          <button 
+            class="btn-apply relative inline-flex items-center justify-center min-w-[160px]"
+            data-button="apply-bottom"
+            aria-label="Apply to 3x10"
+          >
+            <div class="btn-bg-1 absolute bg-[#dfff5c] h-[34px] w-[160px] top-[6px] left-1/2 -translate-x-1/2 transition-all duration-300"></div>
+            <div class="btn-bg-2 absolute bg-[#dfff5c] h-[40px] w-[148px] left-1/2 -translate-x-1/2 top-0 transition-all duration-300"></div>
+            <span class="relative z-10 font-sans text-[#132318] text-[17.8px] px-8 py-2 whitespace-nowrap">
+              APPLY
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-reveal elements
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Button click handlers - ready for URLs
+    document.querySelectorAll('[data-button]').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const buttonType = e.currentTarget.getAttribute('data-button');
+        
+        // Placeholder - URLs will be added later
+        const urls = {
+          'apply-hero': '#', // Replace with actual URL
+          'apply-bottom': '#' // Replace with actual URL
+        };
+
+        const url = urls[buttonType] || '#';
+        
+        if (url !== '#') {
+          window.location.href = url;
+        } else {
+          // For now, just scroll to info section
+          document.getElementById('info')?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Link handlers
+    document.querySelectorAll('[data-link]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const linkType = e.currentTarget.getAttribute('data-link');
+        
+        // Placeholder - URLs will be added later
+        const urls = {
+          'shemfund': '#', // Replace with actual URL
+          'indies': '#' // Replace with actual URL
+        };
+
+        const url = urls[linkType] || '#';
+        
+        if (url !== '#') {
+          window.open(url, '_blank');
+        }
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
 </Layout>
