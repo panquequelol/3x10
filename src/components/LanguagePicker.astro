@@ -1,0 +1,14 @@
+---
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const otherLang = lang === 'es' ? 'en' : 'es';
+const otherPath = lang === 'es' ? '/en' : '/';
+---
+
+<a 
+  href={otherPath} 
+  class="font-sans text-[#dfff5c] text-[18.434px] animate-fade-in cursor-pointer hover:opacity-80 transition-opacity"
+>
+  {otherLang.toUpperCase()}
+</a>

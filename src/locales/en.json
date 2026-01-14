@@ -1,0 +1,56 @@
+{
+  "header": {
+    "brand": "3x10",
+    "by": "by",
+    "shemfund": "shemfund",
+    "indies": "indies.cl"
+  },
+  "hero": {
+    "batchBanner": "BATCH-01 OPEN",
+    "title": "go full-time on<br />your wildest idea",
+    "subtitle": "3x10 is a free program for the 10<br />most ambitious builders in latam",
+    "apply": "APPLY",
+    "stats": {
+      "where": "where?",
+      "whereValue": "santiago",
+      "howMuch": "how much?",
+      "howMuchValue": "$3000 USD",
+      "when": "when?",
+      "whenValue": "august 2026"
+    }
+  },
+  "program": {
+    "description1": "we give you $3,000 to go full time on your idea for 3 days.",
+    "description2": "we're an accelerator for people who ask forgiveness, not permission.",
+    "description3": "you must have already built something. 3 days isn't for starting, it's for pushing further.",
+    "description4": "we want executors. technical builders. people who move fast and make real progress.",
+    "description5": "we're picking 10 people. flying them to santiago, chile. august 2026."
+  },
+  "selection": {
+    "title": "only 10 get selected",
+    "subtitle": "are you the right person for 3x10?",
+    "stats": {
+      "howMany": "how many?",
+      "howManyValue": "10 people",
+      "howLong": "how long?",
+      "howLongValue": "3 days",
+      "when": "when?",
+      "whenValue": "august 2026",
+      "where": "where?",
+      "whereValue": "santiago",
+      "howMuch": "how much?",
+      "howMuchValue": "$3000 USD"
+    }
+  },
+  "poweredBy": {
+    "title": "powered by",
+    "platanusVentures": "platanus ventures"
+  },
+  "whatWouldYouDo": {
+    "title": "what would you do with 3k?",
+    "explode": "explode",
+    "puter": "puter",
+    "fish": "fish",
+    "apply": "APPLY"
+  }
+}
