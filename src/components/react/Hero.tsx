@@ -14,7 +14,7 @@ export function Hero({ lang }: HeroProps) {
       id="home"
       className="relative min-h-[831px] overflow-hidden z-10 flex items-center justify-center"
     >
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-16 w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 w-full">
         {/* BATCH-01 OPEN Banner */}
         <div className="flex justify-center mb-12">
           <div className="relative inline-flex items-center animate-pulse-slow">
@@ -33,11 +33,11 @@ export function Hero({ lang }: HeroProps) {
         {/* Main Title */}
         <div className="text-center mb-6">
           <h1
-            className="font-sans text-[#fffcf5] text-[48px] md:text-[58px] lg:text-[68px] leading-[85px] mb-4"
+            className="font-sans text-[#fffcf5] text-[36px] md:text-[58px] lg:text-[68px] leading-[48px] md:leading-[85px] mb-4 font-medium tracking-tight antialiased"
             dangerouslySetInnerHTML={{ __html: t("hero.title") }}
           />
           <p
-            className="font-sans text-[#fffcf5] text-[20px] md:text-[24px] lg:text-[26px] leading-[34px] opacity-90"
+            className="font-sans text-[#fffcf5] text-[18px] md:text-[24px] lg:text-[26px] leading-[28px] md:leading-[34px] opacity-90 font-normal text-balance tracking-normal antialiased"
             dangerouslySetInnerHTML={{ __html: t("hero.subtitle") }}
           />
         </div>

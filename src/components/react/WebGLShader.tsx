@@ -65,21 +65,12 @@ float getSimplexNoise(vec2 uv, float t) {
   return noise;
 }
 
-const int bayer8x8[64] = int[64](
-   0, 32,  8, 40,  2, 34, 10, 42,
-  48, 16, 56, 24, 50, 18, 58, 26,
-  12, 44,  4, 36, 14, 46,  6, 38,
-  60, 28, 52, 20, 62, 30, 54, 22,
-   3, 35, 11, 43,  1, 33,  9, 41,
-  51, 19, 59, 27, 49, 17, 57, 25,
-  15, 47,  7, 39, 13, 45,  5, 37,
-  63, 31, 55, 23, 61, 29, 53, 21
-);
+const int bayer2x2[4] = int[4](0, 2, 3, 1);
 
 float getBayerValue(vec2 uv) {
-  ivec2 pos = ivec2(mod(uv, 8.0));
-  int index = pos.y * 8 + pos.x;
-  return float(bayer8x8[index]) / 64.0;
+  ivec2 pos = ivec2(mod(uv, 2.0));
+  int index = pos.y * 2 + pos.x;
+  return float(bayer2x2[index]) / 4.0;
 }
 
 void main() {
@@ -87,7 +78,7 @@ void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution.xy;
   
   // Pixelization
-  float pxSize = 0.50 * u_pixelRatio;
+  float pxSize = 1.80 * u_pixelRatio;
   vec2 pxSizeUv = gl_FragCoord.xy;
   pxSizeUv -= .5 * u_resolution;
   pxSizeUv /= pxSize;
@@ -97,7 +88,7 @@ void main() {
   float r = 0.00 * PI / 180.;
   mat2 rot = mat2(cos(r), sin(r), -sin(r), cos(r));
   vec2 shape_uv = uv + vec2(0.00, 0.00);
-  shape_uv *= u_resolution.xy / u_pixelRatio / 0.55;
+  shape_uv *= u_resolution.xy / u_pixelRatio / 1.25;
   shape_uv = rot * shape_uv + .5;
   vec2 ditheringNoise_uv = uv * u_resolution;
   

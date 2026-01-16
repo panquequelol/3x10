@@ -1,18 +1,21 @@
-import { useTranslations } from '../../i18n/utils';
+import { useTranslations } from "../../i18n/utils";
 
 interface PoweredByProps {
-  lang: 'es' | 'en';
+  lang: "es" | "en";
 }
 
 export function PoweredBy({ lang }: PoweredByProps) {
   const t = useTranslations(lang);
 
   return (
-    <section id="powered-by" className="relative z-10 min-h-[831px] flex items-center justify-center py-20">
+    <section
+      id="powered-by"
+      className="relative z-10 min-h-[831px] flex items-center justify-center"
+    >
       <div className="max-w-5xl mx-auto px-4 w-full">
         <div className="text-center mb-16">
           <h2 className="font-sans text-[#fffcf5] text-[36px] md:text-[40px] lg:text-[44px] leading-[50px]">
-            {t('poweredBy.title')}
+            {t("poweredBy.title")}
           </h2>
         </div>
         <div className="flex items-center justify-center">
@@ -25,7 +28,7 @@ export function PoweredBy({ lang }: PoweredByProps) {
               />
             </div>
             <p className="font-sans text-[#e1ff76] text-[22px] leading-[28px]">
-              {t('poweredBy.platanusVentures')}
+              {t("poweredBy.platanusVentures")}
             </p>
           </div>
         </div>

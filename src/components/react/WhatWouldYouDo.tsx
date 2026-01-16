@@ -11,7 +11,7 @@ export function WhatWouldYouDo({ lang }: WhatWouldYouDoProps) {
   return (
     <section
       id="what-would-you-do"
-      className="relative z-10 min-h-[831px] flex items-center justify-center py-20"
+      className="relative z-10 min-h-[831px] flex items-center justify-center"
     >
       <div className="max-w-5xl mx-auto px-4">
         <div className="text-center mb-12">

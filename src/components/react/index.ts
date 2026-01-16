@@ -3,6 +3,7 @@ export { StatItem } from './StatItem';
 export { LanguagePicker } from './LanguagePicker';
 export { Header } from './Header';
 export { Hero } from './Hero';
+export { MarqueeBanner } from './MarqueeBanner';
 export { ProgramDescription } from './ProgramDescription';
 export { Selection } from './Selection';
 export { PoweredBy } from './PoweredBy';

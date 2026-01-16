@@ -1,4 +1,5 @@
 import { WebGLShader } from "./WebGLShader";
+import { MarqueeBanner } from "./MarqueeBanner";
 import { Header } from "./Header";
 import { Hero } from "./Hero";
 import { ProgramDescription } from "./ProgramDescription";
@@ -16,23 +17,21 @@ export function Page({ lang }: PageProps) {
       {/* WebGL Background Shader */}
       <WebGLShader />
 
-      {/* Header */}
-      <Header lang={lang} />
+      {/* Content sections with controlled spacing */}
+      <div className="flex flex-col gap-8">
+        <div>
+          <MarqueeBanner lang={lang} />
+          <Header lang={lang} />
+        </div>
 
-      {/* Hero Section */}
-      <Hero lang={lang} />
+        <Hero lang={lang} />
 
-      {/* Program Description Section */}
-      <ProgramDescription lang={lang} />
+        <ProgramDescription lang={lang} />
 
-      {/* Only 10 get selected Section */}
-      <Selection lang={lang} />
+        <PoweredBy lang={lang} />
 
-      {/* Powered by Section */}
-      <PoweredBy lang={lang} />
-
-      {/* What would you do with 3k? Section */}
-      <WhatWouldYouDo lang={lang} />
+        <WhatWouldYouDo lang={lang} />
+      </div>
     </div>
   );
 }
